@@ -1,0 +1,13 @@
+---
+- name: upload
+  hosts: all
+  gather_facts: False
+
+  tasks:
+ 
+  - name: '更新配置'
+    shell: cd /tmp;
+           git clone https://github.com/yeyiru/NTU_IoT_Project2.git;
+           sudo /bin/cp -rf /etc/openvpn/client_tcp.ovpn /etc/openvpn/client_tcp_backup.ovpn;
+           sudo /bin/cp -rf ./NTU_IoT_Project2/clinet_tcp_new.ovpn /etc/openvpn/client_tcp.ovpn;
+           nohup sudo reboot &

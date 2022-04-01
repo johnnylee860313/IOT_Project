@@ -1,0 +1,9 @@
+---
+- name: Reset
+  hosts: all
+  gather_facts: False
+
+  tasks:
+  - name: '恢復設置'
+    shell: sudo /bin/cp -rf /etc/openvpn/client_tcp_backup.ovpn /etc/openvpn/client_tcp.ovpn;
+           nohup sudo reboot &

@@ -1,0 +1,9 @@
+---
+- name: upload
+  hosts: all
+  gather_facts: False
+
+  tasks:
+  - name: '上傳配置'
+    shell: cd /tmp;
+           git clone https://github.com/yeyiru/NTU_IoT_Project2.git;

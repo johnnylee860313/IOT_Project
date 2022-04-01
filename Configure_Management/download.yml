@@ -1,0 +1,10 @@
+---
+- name: download
+  hosts: all
+  gather_facts: False
+
+  tasks:
+ 
+  - name: '下載備份配置'
+    shell: cd /etc/openvpn;
+           sshpass -p ntuiot402 scp client_tcp.ovpn root@10.8.0.1:/webs/client_tcp.ovpn
